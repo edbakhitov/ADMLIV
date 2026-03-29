@@ -1,0 +1,35 @@
+Hyperparameters to replicate results from Section 8.3 (Elasticity Monte Carlo).
+
+DGP: Logit demand model
+    - beta_p = -2.0
+    - beta_x = (1, -0.5, 0.5, 1)
+    - K_1 = 1 (special regressor), K_2 = 3 (other characteristics)
+    - K_w = 1 (cost shifter / excluded instrument)
+    - xi ~ N(1, 0.15^2)
+    - J in {2, 5}, T in {100, 200, 400, 800}
+    - theta_0 approximated via T = 100,000 market pre-simulation
+    - 500 replications per configuration
+    - Outlier removal: IQR-based filter with multiplier = 10
+
+1. MLIV: Kernel IV (KIV)
+    - kiv_bandwidth_method = 'median'
+    - kiv_bandwidth_scale = 25.0
+
+2. OmegaTransformer (omega):
+    - price_in_diffs = True
+    - include_prices = True
+    - include_shares = True
+    - share_representation = 'all'
+
+3. OmegaTransformer (IV):
+    - include_prices = False
+    - include_shares = False
+
+4. PGMM / ADMLIV:
+    - Basis d(omega): degree-2 polynomial with pairwise interactions, include_bias=True
+    - Basis b(z): degree-2 polynomial without pairwise interactions, include_bias=True
+    - pgmm_c = 1e-7
+    - admliv_n_folds = 5 (double cross-fitting)
+    - admliv_use_adaptive_pgmm = True
+    - admliv_high_cond_number = 100.0
+    - product_id = 0 (first product)

@@ -1,0 +1,28 @@
+Hyperparameters to replicate results from Section 7.
+
+1. DLasso:
+    - Basis (X and Z): Cubic polynomials with all interactions
+    - for all k and n_obs:
+        - dlasso_feat_degree = 3
+        - dlasso_cv = 3
+        - dlasso_fs_alpha = 0.0001
+        - dlasso_tol = 0.001
+        - dlasso_alphas = np.logspace(-7, -1, 100)
+
+2. DML:
+    - Basis (X and Z): cubic polynomials with only pairwise interactions
+    - for all k and n_obs:
+        - dml_n_folds = 5
+        - dml_feat_degree = 3
+
+3. ADMLIV:
+    - Basis (X and Z): Cubic polynomials with all interactions
+    - admliv_n_folds = 5
+    - admliv_use_adaptive_pgmm = True
+    - admliv_use_cv_for_pgmm = False
+    - for k = 2 and all n_obs:
+        - pgmm_c = 0.01
+    - for k = 5 and all n_obs:
+        - pgmm_c = 0.001
+    - for k = 10 and all n_obs:
+        - pgmm_c = 0.0001

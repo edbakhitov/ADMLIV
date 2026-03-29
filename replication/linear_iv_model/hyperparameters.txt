@@ -1,0 +1,23 @@
+A list of hyperparameters to replicate the results in Section C.1.2
+
+1. Double Lasso
+    - for all n_obs:
+        - dlasso_cv = 5
+        - dlasso_fs_alpha = 0.0001
+        - dlasso_alphas = np.logspace(-7, -1, 100)
+
+2. PGMM
+    - for all n_obs:
+        - pgmm_c = 0.01
+        - pgmm_c_vec = [0.005, 0.0075, 0.01, 0.0125, 0.015]
+        - pgmm_cv_folds = 5
+
+3. A-PGMM
+    - n_obs = 100:
+        - pgmm_c = 0.01
+        - pgmm_c_vec = [0.005, 0.0075, 0.01, 0.0125, 0.015]
+        - pgmm_cv_folds = 5
+    - n_obs = 1000 / 10000:
+        - pgmm_c = 0.001
+        - pgmm_c_vec = [0.0005, 0.00075, 0.001, 0.00125, 0.0015]
+        - pgmm_cv_folds = 5

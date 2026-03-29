@@ -1,0 +1,25 @@
+A list of hyperparameters to replicate the results in Section C.1.1
+
+1. SGD
+    - alphas = np.logspace(-7, -1, 250)
+    - cv = 5
+    - max_iter = 2000
+    - tol = 1e-4
+
+2. LARS
+    - cv = 5
+    - max_n_alphas = 250
+
+3. RMD
+    - rmd_c = 0.5
+    - rmd_alpha = 0.1
+    - rmd_D_add = 0.2
+    - rmd_low_dim_divisor = 40
+    - rmd_cv_folds = 5
+    - rmd_c_vec = [0.25, 0.5, 0.75, 1.0, 1.25]
+
+4. PGMM / A-PGMM
+    pgmm_c = 0.01
+    pgmm_cv_folds = 5
+    pgmm_c_vec = [0.005, 0.0075, 0.01, 0.0125, 0.015]
+
