@@ -73,4 +73,4 @@ ADMLIV is designed as a modular framework:
 
 ## Reference
 
-Bakhitov, E. (2026). *Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators*.
+Bakhitov, E. (2026). *Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators*. [[arXiv]](https://arxiv.org/abs/2603.29889)

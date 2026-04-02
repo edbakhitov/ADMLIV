@@ -2,7 +2,7 @@
 
 A Python package for debiased estimation and inference on functionals of machine learning instrumental variables (MLIV) estimators. ADMLIV provides valid confidence intervals and hypothesis tests for a wide class of functionals&mdash;including weighted averages, average derivatives, and demand elasticities&mdash;without requiring strong assumptions on the MLIV function classes.
 
-The methodology is based on the paper *"Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators"* by Edvard Bakhitov (2026).
+The methodology is based on the paper *"Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators"* by Edvard Bakhitov (2026). [[arXiv]](https://arxiv.org/abs/2603.29889)
 
 ## Installation
 
@@ -111,7 +111,9 @@ See the [`docs/`](docs/) directory for detailed documentation:
 @article{bakhitov2026pgmm,
   title={Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators},
   author={Bakhitov, Edvard},
-  year={2026}
+  year={2026},
+  eprint={2603.29889},
+  archivePrefix={arXiv}
 }
 ```
 

@@ -64,10 +64,10 @@ class MonteCarloConfig:
     
     # Method-specific configs
     pgmm_c: float = 0.01
-    pgmm_c_ada: float = 0.001
+    pgmm_c_ada: float = 0.01
     pgmm_cv_folds: int = 5
     pgmm_c_vec: List[float] = field(default_factory=lambda: [0.005, 0.0075, 0.01, 0.0125, 0.015])
-    pgmm_c_vec_ada: List[float] = field(default_factory=lambda: [0.0005, 0.00075, 0.001, 0.00125, 0.0015])
+    pgmm_c_vec_ada: List[float] = field(default_factory=lambda: [0.005, 0.0075, 0.01, 0.0125, 0.015])
     
     
     dlasso_cv: int = 5
@@ -474,13 +474,23 @@ def main():
         results_dir = script_dir / 'results'
         args.output = str(results_dir / f'mc_results_hd_linear_iv_n{args.n_obs}.csv')
     
+    # A-PGMM penalty depends on sample size (see hyperparameters.txt)
+    if args.n_obs <= 100:
+        pgmm_c_ada = 0.01
+        pgmm_c_vec_ada = [0.005, 0.0075, 0.01, 0.0125, 0.015]
+    else:
+        pgmm_c_ada = 0.001
+        pgmm_c_vec_ada = [0.0005, 0.00075, 0.001, 0.00125, 0.0015]
+
     config = MonteCarloConfig(
         n_runs=args.n_runs,
         n_obs=args.n_obs,
         dx=args.dx,
         dz=args.dz,
         r=args.r,
-        seed=args.seed
+        seed=args.seed,
+        pgmm_c_ada=pgmm_c_ada,
+        pgmm_c_vec_ada=pgmm_c_vec_ada,
     )
     
     mc = MonteCarloHDLinearIV(config=config, verbose=True)

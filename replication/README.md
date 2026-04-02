@@ -1,6 +1,6 @@
 # Replication Files
 
-This directory contains Monte Carlo simulation scripts for replicating the results in *"Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators"* by Edvard Bakhitov (2026).
+This directory contains Monte Carlo simulation scripts for replicating the results in *"Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators"* by Edvard Bakhitov (2026). [[arXiv]](https://arxiv.org/abs/2603.29889)
 
 ## Prerequisites
 

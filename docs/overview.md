@@ -6,7 +6,7 @@ ADMLIV (Automatic Debiased Machine Learning for Instrumental Variables) is a Pyt
 
 In many applications, we estimate a structural function $\gamma(x) = E[Y|X=x]$ using instruments $Z$ via machine learning methods (kernel methods, LASSO, neural networks, etc.). While these ML estimators converge slowly to the truth, ADMLIV enables $\sqrt{n}$-consistent estimation and valid confidence intervals for *functionals* $\theta(\gamma) = E[m(W;\gamma)]$ by automatically constructing a debiasing correction.
 
-The methodology is based on the paper *"Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators"* by Edvard Bakhitov (2026).
+The methodology is based on the paper *"Penalized GMM Framework for Inference on Functionals of Nonparametric Instrumental Variable Estimators"* by Edvard Bakhitov (2026). [[arXiv]](https://arxiv.org/abs/2603.29889)
 
 ## Installation
 
